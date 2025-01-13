@@ -1,0 +1,221 @@
+{
+  "version": "38.0.1",
+  "artifacts": {
+    "DemoStack.assets": {
+      "type": "cdk:asset-manifest",
+      "properties": {
+        "file": "DemoStack.assets.json",
+        "requiresBootstrapStackVersion": 6,
+        "bootstrapStackVersionSsmParameter": "/cdk-bootstrap/hnb659fds/version"
+      }
+    },
+    "DemoStack": {
+      "type": "aws:cloudformation:stack",
+      "environment": "aws://unknown-account/unknown-region",
+      "properties": {
+        "templateFile": "DemoStack.template.json",
+        "terminationProtection": false,
+        "validateOnSynth": false,
+        "assumeRoleArn": "arn:${AWS::Partition}:iam::${AWS::AccountId}:role/cdk-hnb659fds-deploy-role-${AWS::AccountId}-${AWS::Region}",
+        "cloudFormationExecutionRoleArn": "arn:${AWS::Partition}:iam::${AWS::AccountId}:role/cdk-hnb659fds-cfn-exec-role-${AWS::AccountId}-${AWS::Region}",
+        "stackTemplateAssetObjectUrl": "s3://cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}/399f41c393455e57da147e860811c4c2c26a3977126c27816c68430863855eee.json",
+        "requiresBootstrapStackVersion": 6,
+        "bootstrapStackVersionSsmParameter": "/cdk-bootstrap/hnb659fds/version",
+        "additionalDependencies": [
+          "DemoStack.assets"
+        ],
+        "lookupRole": {
+          "arn": "arn:${AWS::Partition}:iam::${AWS::AccountId}:role/cdk-hnb659fds-lookup-role-${AWS::AccountId}-${AWS::Region}",
+          "requiresBootstrapStackVersion": 8,
+          "bootstrapStackVersionSsmParameter": "/cdk-bootstrap/hnb659fds/version"
+        }
+      },
+      "dependencies": [
+        "DemoStack.assets"
+      ],
+      "metadata": {
+        "/DemoStack/MyBucket/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "MyBucketF68F3FF0"
+          }
+        ],
+        "/DemoStack/MyBucket/Policy/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "MyBucketPolicyE7FBAC7B"
+          }
+        ],
+        "/DemoStack/MyBucket/AutoDeleteObjectsCustomResource/Default": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "MyBucketAutoDeleteObjectsCustomResource2C28D565"
+          }
+        ],
+        "/DemoStack/LatestNodeRuntimeMap": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "LatestNodeRuntimeMap"
+          }
+        ],
+        "/DemoStack/Custom::S3AutoDeleteObjectsCustomResourceProvider": [
+          {
+            "type": "aws:cdk:is-custom-resource-handler-customResourceProvider",
+            "data": true
+          }
+        ],
+        "/DemoStack/Custom::S3AutoDeleteObjectsCustomResourceProvider/Role": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "CustomS3AutoDeleteObjectsCustomResourceProviderRole3B1BD092"
+          }
+        ],
+        "/DemoStack/Custom::S3AutoDeleteObjectsCustomResourceProvider/Handler": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "CustomS3AutoDeleteObjectsCustomResourceProviderHandler9D90184F"
+          }
+        ],
+        "/DemoStack/MyTable/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "MyTable794EDED1"
+          }
+        ],
+        "/DemoStack/MyLambda/ServiceRole/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "MyLambdaServiceRole4539ECB6"
+          }
+        ],
+        "/DemoStack/MyLambda/ServiceRole/DefaultPolicy/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "MyLambdaServiceRoleDefaultPolicy5BBC6F68"
+          }
+        ],
+        "/DemoStack/MyLambda/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "MyLambdaCCE802FB"
+          }
+        ],
+        "/DemoStack/MyApiGateway/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "MyApiGateway04A753E5"
+          }
+        ],
+        "/DemoStack/MyApiGateway/Deployment/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "MyApiGatewayDeployment44AAC031b1ff6c01547db37361fc99f7e02269e6"
+          }
+        ],
+        "/DemoStack/MyApiGateway/DeploymentStage.prod/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "MyApiGatewayDeploymentStageprodEBC77C1B"
+          }
+        ],
+        "/DemoStack/MyApiGateway/Endpoint": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "MyApiGatewayEndpoint84AE9DBF"
+          }
+        ],
+        "/DemoStack/MyApiGateway/Default/{proxy+}/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "MyApiGatewayproxyB12FA60D"
+          }
+        ],
+        "/DemoStack/MyApiGateway/Default/{proxy+}/ANY/ApiPermission.DemoStackMyApiGateway8D7EC330.ANY..{proxy+}": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "MyApiGatewayproxyANYApiPermissionDemoStackMyApiGateway8D7EC330ANYproxyEC81FDCA"
+          }
+        ],
+        "/DemoStack/MyApiGateway/Default/{proxy+}/ANY/ApiPermission.Test.DemoStackMyApiGateway8D7EC330.ANY..{proxy+}": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "MyApiGatewayproxyANYApiPermissionTestDemoStackMyApiGateway8D7EC330ANYproxyB03196BA"
+          }
+        ],
+        "/DemoStack/MyApiGateway/Default/{proxy+}/ANY/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "MyApiGatewayproxyANY9109CCAE"
+          }
+        ],
+        "/DemoStack/MyApiGateway/Default/ANY/ApiPermission.DemoStackMyApiGateway8D7EC330.ANY..": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "MyApiGatewayANYApiPermissionDemoStackMyApiGateway8D7EC330ANYE2BAA616"
+          }
+        ],
+        "/DemoStack/MyApiGateway/Default/ANY/ApiPermission.Test.DemoStackMyApiGateway8D7EC330.ANY..": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "MyApiGatewayANYApiPermissionTestDemoStackMyApiGateway8D7EC330ANY3831C350"
+          }
+        ],
+        "/DemoStack/MyApiGateway/Default/ANY/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "MyApiGatewayANY5F397525"
+          }
+        ],
+        "/DemoStack/BucketName": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "BucketName"
+          }
+        ],
+        "/DemoStack/TableName": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "TableName"
+          }
+        ],
+        "/DemoStack/ApiEndpoint": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "ApiEndpoint"
+          }
+        ],
+        "/DemoStack/CDKMetadata/Default": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "CDKMetadata"
+          }
+        ],
+        "/DemoStack/CDKMetadata/Condition": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "CDKMetadataAvailable"
+          }
+        ],
+        "/DemoStack/BootstrapVersion": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "BootstrapVersion"
+          }
+        ],
+        "/DemoStack/CheckBootstrapVersion": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "CheckBootstrapVersion"
+          }
+        ]
+      },
+      "displayName": "DemoStack"
+    },
+    "Tree": {
+      "type": "cdk:tree",
+      "properties": {
+        "file": "tree.json"
+      }
+    }
+  }
+}
