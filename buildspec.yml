@@ -1,20 +1,17 @@
 version: 0.2
-
 phases:
   install:
     commands:
       - echo Installing dependencies...
       - npm install
-
   build:
     commands:
       - echo Building the project...
+      - chmod +x ./node_modules/.bin/tsc
       - npm run build
-
   post_build:
     commands:
       - echo Build completed successfully!
-
 artifacts:
   files:
     - '**/*'
